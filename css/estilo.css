@@ -9,22 +9,71 @@
 
 body {
     height: 100vh;
-    background: linear-gradient(to bottom, #DDD6FE, #C4B5FD);
+    background: linear-gradient(to bottom, #E0E7FF, #C7D2FE);
     background-repeat: no-repeat;
 }
 
-#botao-chat {
-    display: block;
-    width: 50px;
-    height: 50px;
-    margin: 20px;
-    border: none;
-    border-radius: 50%;
-    background-color: #7C3AED;
-    color: #fff;
-    font-size: 1.5em;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    height: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid red;
 }
 
+#chat-box {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    height: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid orangered;
+}
+
+.msg-do-usuario {
+    background-color: #C7D2FE;
+}
+
+#msg-box {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px 0;
+    outline: 20px;
+    border-radius: 10px;
+    border: 1px solid orangered;
+    background-color: #EEF2FF;
+}
+
+#caixa-msg {
+    width: 100%;
+    padding: 5px 0 5px 15px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+#enviar-msg {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 50%;
+    background-color: #4F46E5;
+    color: #FFF;
+    font-size: em;
+    text-align: center;
+    border: none;
+}
+
+#enviar-msg:hover {
+    background-color: #4338CA;
+}
+
+footer p {
+    font-size: .7em;
+    text-align: center;
+}
