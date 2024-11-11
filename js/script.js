@@ -38,7 +38,7 @@ class Chat {
             const resposta = await fetch('https://api.gemini.google.com/v1/chat', {
                 method: 'POST',
                 headers: {
-                    'Authorization': 'Bearer AIzaSyDNJYsAA4QYExPtlyBWYStijvPx-ELNXic',
+                    'Authorization': 'Bearer',
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
