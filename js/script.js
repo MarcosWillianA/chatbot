@@ -4,6 +4,7 @@ const caixaTexto = document.querySelector('#caixa-texto');
 const enviarTexto = document.querySelector('#enviar-texto');
 const msgsEnviadas = document.querySelectorAll('.enviadas');
 const msgsRespostas = document.querySelectorAll('.resposta-chatbot');
+const chave = 'AIzaSyDNJYsAA4QYExPtlyBWYStijvPx-ELNXic'
 
 class Chat {
     constructor() {
@@ -38,7 +39,7 @@ class Chat {
             const resposta = await fetch('https://api.gemini.google.com/v1/chat', {
                 method: 'POST',
                 headers: {
-                    'Authorization': 'Bearer',
+                    'Authorization': `${chave}`,
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
