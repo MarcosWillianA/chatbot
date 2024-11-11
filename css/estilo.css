@@ -123,6 +123,7 @@ h1 {
 
 #texto-envio button:active {
     color: #fde047;
+    outline: none;
 }
 
 footer p {
