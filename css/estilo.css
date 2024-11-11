@@ -15,9 +15,8 @@ body {
 
 #container {
     min-width: 320px;
-    margin: 30px auto;
+    margin: auto;
     padding: 20px 0;
-    border: 1px solid red;
 }
 
 h1 {
@@ -29,10 +28,10 @@ h1 {
 #chat-container {
     display: flex;
     flex-direction: column;
-    width: 320px;
+    width: 300px;
     height: 80vh;
-    margin: auto;
-    border: 1px solid orangered;
+    margin: 10px auto;
+    overflow: hidden;
 }
 
 #chat-cabecalho {
@@ -45,6 +44,7 @@ h1 {
 #chat-cabecalho h2 {
     width: 100%;
     font-size: 1em;
+    font-weight: 300;
 }
 
 #chat-cabecalho button {
@@ -68,6 +68,7 @@ h1 {
     padding: 10px;
     background-color: #f0fdfa;
     font-size: .8em;
+    overflow-y: auto;
 }
 
 .enviadas {
@@ -90,4 +91,41 @@ h1 {
     padding: 10px 5px;
     background-color: #0f766e;
     color: #fff;
+}
+
+#texto-envio {
+    display: flex;
+    width: 100%;
+    padding: 1px 10px;
+    border-radius: 30px;
+    background-color: #f0fdfa;
+}
+
+#texto-envio input[type=text] {
+    width: 100%;
+    padding: 5px 0;
+    border: none;
+    background-color: inherit;
+}
+
+#texto-envio input[type=text]:focus {
+    outline: none;
+}
+
+#texto-envio button {
+    display: block;
+    width: 40px;
+    border: none;
+    background-color: inherit;
+    color: #134e4a;
+    font-size: 1em;
+}
+
+#texto-envio button:active {
+    color: #fde047;
+}
+
+footer p {
+    font-size: .7em;
+    text-align: center;
 }
