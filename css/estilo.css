@@ -27,6 +27,8 @@ h1 {
 }
 
 #chat-container {
+    display: flex;
+    flex-direction: column;
     width: 320px;
     height: 80vh;
     margin: auto;
@@ -35,20 +37,57 @@ h1 {
 
 #chat-cabecalho {
     display: flex;
-    padding: 10px 0;
+    padding: 10px 5px;
     background-color: #0f766e;
     color: #fff;
 }
 
 #chat-cabecalho h2 {
+    width: 100%;
     font-size: 1em;
 }
 
 #chat-cabecalho button {
+    padding: 0 8px;
     border: none;
-    padding-left: 10px;
     background-color: inherit;
     color: inherit;
-    
-    
+}
+
+#chat-cabecalho button:active {
+    color: #fde047;
+}
+
+/* Campo das mensagens */
+
+#chat-mensagens {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 2;
+    padding: 10px;
+    background-color: #f0fdfa;
+    font-size: .8em;
+}
+
+.enviadas {
+    align-self: flex-end;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #14b8a6;
+    color: #fff;
+}
+
+.resposta-chatbot {
+    align-self: flex-start;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #2dd4bf;
+    color: #fff;
+}
+
+#chat-envio {
+    padding: 10px 5px;
+    background-color: #0f766e;
+    color: #fff;
 }
