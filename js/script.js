@@ -34,36 +34,48 @@ class Chat {
     
     async respostaBot() {
         const msg = this.envio[this.envio.length - 1];
-
+    
+        const url = 'https://dialogflow.googleapis.com/v2/projects/YOUR_PROJECT_ID/agent/sessions/YOUR_SESSION_ID:detectIntent';
+    
+        const accessToken = `${chave}`;  // Aqui você insere o token gerado para autenticação
+    
+        const requestBody = {
+            queryInput: {
+                text: {
+                    text: msg,
+                    languageCode: 'pt-BR',
+                }
+            }
+        };
+    
         try {
-            const resposta = await fetch('https://api.gemini.google.com/v1/chat', {
+            const resposta = await fetch(url, {
                 method: 'POST',
                 headers: {
-                    'Authorization': `${chave}`,
+                    'Authorization': `Bearer ${accessToken}`,
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    message: msg,
-                })
+                body: JSON.stringify(requestBody),
             });
     
             if (!resposta.ok) {
-                throw new Error('Falha na comunicação com API');
+                throw new Error('Falha na comunicação com a API');
             }
     
             const data = await resposta.json();
     
-            if (data && data.resposta) {
-                this.exibirRespostaBot(data.resposta);
+            if (data.queryResult.fulfillmentText) {
+                this.exibirRespostaBot(data.queryResult.fulfillmentText);
             } else {
                 this.exibirRespostaBot('Desculpe, não entendi sua mensagem. Tente novamente.');
             }
+    
         } catch (error) {
             console.error(error);
-            this.exibirRespostaBot('Houve um erro ao se comunicar com o servidor. Tente novamente mais tarde')
+            this.exibirRespostaBot('Houve um erro ao se comunicar com o servidor. Tente novamente mais tarde');
         }
-
     }
+    
 
     exibirRespostaBot(resposta) {
         const respostaBot = document.createElement('p');
